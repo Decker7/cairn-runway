@@ -197,6 +197,9 @@ export function App() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main">
+        Skip to plan workspace
+      </a>
       <header className="topbar">
         <a className="brand" href="#main" aria-label="Cairn Runway home">
           <span className="brand-mark">
@@ -207,6 +210,9 @@ export function App() {
           </span>
         </a>
         <div className="header-actions">
+          <span className="save-state" role="status">
+            <Check size={15} weight="bold" /> Saved locally
+          </span>
           <button
             className="icon-button"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -257,12 +263,17 @@ export function App() {
             />
             <h1 id="page-title">Know the range, not just the average.</h1>
           </div>
-          <div className="hero-note">
-            <Flask size={24} />
-            <p>
-              Each view runs 1,200 seeded simulations locally. Nothing leaves
-              your device.
-            </p>
+          <div className="hero-note" aria-label="Simulation details">
+            <div className="hero-note-icon">
+              <Flask size={23} weight="bold" />
+            </div>
+            <div>
+              <strong>1,200 local paths</strong>
+              <p>
+                Seeded simulations recalculate as you edit. Your operating data
+                never leaves this browser.
+              </p>
+            </div>
           </div>
         </section>
 

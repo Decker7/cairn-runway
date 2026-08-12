@@ -1,6 +1,27 @@
 import { useEffect, useRef } from "react";
-import { Chart } from "chart.js/auto";
+import {
+  CategoryScale,
+  Chart,
+  Filler,
+  Legend,
+  LinearScale,
+  LineController,
+  LineElement,
+  PointElement,
+  Tooltip,
+} from "chart.js";
 import type { Plan, ProjectionResult } from "./domain";
+
+Chart.register(
+  CategoryScale,
+  LinearScale,
+  LineController,
+  LineElement,
+  PointElement,
+  Filler,
+  Legend,
+  Tooltip,
+);
 
 interface RunwayChartProps {
   result: ProjectionResult;
